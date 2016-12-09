@@ -27,5 +27,21 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
-var endpoint = "https://gateway.watsonplatform.net/tradeoff-analytics/api/v1/dilemmas?generate_visualization=false";
+var secret = require('./secret.js');
+var TradeoffAnalyticsV1 = require('watson-developer-cloud/tradeoff-analytics/v1');
+var tradeoff_analytics = new TradeoffAnalyticsV1({
+  username: secret.username,
+  password: secret.password,
+  headers: {
+    'X-Watson-Learning-Opt-Out': 'true'
+  }
+});
 
+var params = require('./problem.json');
+tradeoff_analytics.dilemmas(params, function(error, resolution) {
+  if (error) {
+    console.log('error: ', error)
+  } else {
+    console.log(JSON.stringify(resolution, null, 2));
+  }
+});

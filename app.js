@@ -26,3 +26,6 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
+
+var endpoint = "https://gateway.watsonplatform.net/tradeoff-analytics/api/v1/dilemmas?generate_visualization=false";
+

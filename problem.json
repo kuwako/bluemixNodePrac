@@ -1,122 +1,56 @@
 {
-  "subject": "phones",
+  "subject": "beer",
   "generate_visualization": false,
   "columns": [
     {
-      "key": "price",
+      "key": "itemPrice",
       "type": "numeric",
       "goal": "min",
       "is_objective": true,
       "full_name": "Price",
       "range": {
         "low": 0,
-        "high": 400
+        "high": 10000
       },
       "format": "number:2"
     },
     {
-      "key": "weight",
+      "key": "reviewCount",
       "type": "numeric",
-      "goal": "min",
+      "goal": "max",
       "is_objective": true,
-      "full_name": "Weight",
+      "full_name": "ReviewCount",
       "format": "number:0"
     },
     {
-      "key": "brand",
-      "type": "categorical",
-      "goal": "min",
-      "is_objective": true,
-      "full_name": "Brand",
-      "range": [
-        "Apple",
-        "HTC",
-        "Samsung",
-        "Sony"
-      ],
-      "preference": [
-        "Samsung",
-        "Apple",
-        "HTC"
-      ]
-    },
-    {
-      "key": "rDate",
-      "type": "datetime",
+      "key": "reviewAverage",
+      "type": "numeric",
       "goal": "max",
-      "full_name": "Release Date",
-      "format": "date: 'MMM dd, yyyy'"
+      "is_objective": true,
+      "full_name": "ReviewAverage",
+      "range": {
+          "low": 3.0,
+          "high": 5.0
+      }
     }
   ],
   "options": [
     {
       "key": "1",
-      "name": "Samsung Galaxy S4",
+      "name": "Asahi",
       "values": {
-        "price": 249,
-        "weight": 130,
-        "brand": "Samsung",
-        "rDate": "2013-04-29T00:00:00Z"
+        "itemPrice": 1000,
+        "reviewCount": 130,
+        "reviewAverage": 4.5
       }
     },
     {
       "key": "2",
-      "name": "Apple iPhone 5",
+      "name": "Kirin",
       "values": {
-        "price": 349,
-        "weight": 112,
-        "brand": "Apple",
-        "rDate": "2012-09-21T00:00:00Z"
-      }
-    },
-    {
-      "key": "3",
-      "name": "HTC One",
-      "values": {
-        "price": 299,
-        "weight": 112,
-        "brand": "HTC",
-        "rDate": "2013-03-01T00:00:00Z"
-      }
-    },
-    {
-      "key": "4",
-      "name": "Samsung Galaxy S5",
-      "values": {
-        "price": 349,
-        "weight": 135,
-        "brand": "Samsung",
-        "rDate": "2014-04-29T00:00:00Z"
-      }
-    },
-    {
-      "key": "5",
-      "name": "Apple iPhone 6",
-      "values": {
-        "price": 399,
-        "weight": 118,
-        "brand": "Apple",
-        "rDate": "2013-09-21T00:00:00Z"
-      }
-    },
-    {
-      "key": "6",
-      "name": "Apple iPhone 7",
-      "values": {
-        "price": 499,
-        "weight": 118,
-        "brand": "Apple",
-        "rDate": "2014-09-21T00:00:00Z"
-      }
-    },
-    {
-      "key": "7",
-      "name": "Sony Xperia",
-      "values": {
-        "price": 199,
-        "weight": 120,
-        "brand": "Sony",
-        "rDate": "2014-08-21T00:00:00Z"
+        "itemPrice": 2000,
+        "reviewCount": 120,
+        "reviewAverage": 3.5
       }
     }
   ]

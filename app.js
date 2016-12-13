@@ -39,7 +39,7 @@ http.get(url, function(res) {
 
   res.on('end', function(res) {
       ret = JSON.parse(body);
-      console.log(ret);
+      console.log(ret.Items);
   });
 }).on('error', function(e) {
   console.log(e.message);

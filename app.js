@@ -27,8 +27,11 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
+var secret = require('./secret.js');
+
 var http = require('https');
-var url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20140222?applicationId=1018675735002256351&keyword=%E3%83%93%E3%83%BC%E3%83%AB&sort=%2reviewAverage&hits=10&page=1';
+var url = secret.rakuten_url;
+
 http.get(url, function(res) {
   var body = '';
   res.setEncoding('utf8');
@@ -45,7 +48,6 @@ http.get(url, function(res) {
   console.log(e.message);
 });
 
-var secret = require('./secret.js');
 var TradeoffAnalyticsV1 = require('watson-developer-cloud/tradeoff-analytics/v1');
 var tradeoff_analytics = new TradeoffAnalyticsV1({
   username: secret.username,

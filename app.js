@@ -5,6 +5,7 @@ app.use(express.static(__dirname + '/public'));
 var appEnv = cfenv.getAppEnv();
 
 app.get('/', function(req, res) {
+  console.log('get');
   if (req.query.freeword) {
     var secret = require('./secret.js');
     var http = require('https');
